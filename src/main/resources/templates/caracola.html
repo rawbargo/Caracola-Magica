@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Caracola Mágica</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="bubbles-container">
+        <!-- Las burbujas se generarán dinámicamente aquí -->
+    </div>
+    <div class="caracola-card">
+        <h1 class="card-title">Preguntale a la Caracola Magica</h1>
+        <form action="#" th:action="@{/preguntar}" method="post" class="mt-4">
+            <button type="submit" class="btn-imagen">
+                <img src="/img/caracola.png" class="caracola-imagen" alt="Caracola Mágica">
+            </button>
+        </form>
+        <div class="mt-4 respuesta-caracola" th:if="${respuesta != null}">
+            <h2 class="card-text">Respuesta: <span th:text="${respuesta}"></span></h2>
+        </div>
+    </div>
+    <footer class="footer">
+        <span class="text-muted">by Raw.</span>
+    </footer>
+    <script src="/js/bubbles.js"></script>
+</body>
+</html>
